@@ -1,4 +1,5 @@
 import express from 'express'
+import 'module-alias/register';
 import cors from 'cors'
 import logger from '@utils/logger'
 import { AppDataSource } from '@config/database'
