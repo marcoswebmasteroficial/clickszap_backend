@@ -33,6 +33,7 @@ const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         });
     }
     catch (error) {
+        console.log(error);
         (0, response_1.default)(res, 500, {
             message: messages_1.messages.errors.INTERNAL_SERVER_ERROR,
             error
@@ -78,6 +79,7 @@ const refreshAccessToken = (req, res) => __awaiter(void 0, void 0, void 0, funct
         });
     }
     catch (error) {
+        console.log(error);
         (0, response_1.default)(res, 500, {
             message: messages_1.messages.errors.INTERNAL_SERVER_ERROR,
             error

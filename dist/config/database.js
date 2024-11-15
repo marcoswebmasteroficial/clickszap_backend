@@ -17,7 +17,9 @@ const AppDataSource = new typeorm_1.DataSource({
     database: process.env.DB_TYPE === 'sqlite' ? 'database.sqlite' : '',
     synchronize: true,
     logging: false,
-    entities: [path_1.default.resolve(__dirname, '../models/*.ts')],
+    entities: [
+        path_1.default.resolve(__dirname, `../models/*.${process.env.NODE_ENV === 'production' ? 'js' : 'ts'}`)
+    ],
     migrations: [path_1.default.resolve(__dirname, '../migrations/*.ts')],
     subscribers: []
 });
