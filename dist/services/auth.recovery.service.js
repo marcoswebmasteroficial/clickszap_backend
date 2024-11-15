@@ -51,17 +51,11 @@ const recoveryPassword = (_a) => __awaiter(void 0, [_a], void 0, function* ({ em
         otp.user = user;
         yield database_1.AppDataSource.getRepository(Otp_1.Otp).save(otp);
     }
-    try {
-        yield (0, nodemail_1.sendRecoveryEmail)({
-            to: email,
-            subject: 'Recuperação de Senha',
-            otpCode
-        });
-    }
-    catch (_b) {
-        erros.push(messages_1.messages.errors.EMAIL_SEND_FAILED);
-        erros.push('Tente novamente mais tarde ou entre em contato com o suporte');
-    }
+    yield (0, nodemail_1.sendRecoveryEmail)({
+        to: email,
+        subject: 'Recuperação de Senha',
+        otpCode
+    });
     return { token, erros };
 });
 exports.recoveryPassword = recoveryPassword;

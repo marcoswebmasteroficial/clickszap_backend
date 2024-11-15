@@ -41,7 +41,8 @@ const sendRecoveryEmail = (options) => __awaiter(void 0, void 0, void 0, functio
     try {
         yield transporter.sendMail(mailOptions);
     }
-    catch (_error) {
+    catch (error) {
+        console.log(error);
         throw new Error(messages_1.messages.errors.EMAIL_SEND_FAILED);
     }
 });

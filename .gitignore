@@ -1,7 +1,7 @@
 /src
 /node_modules
 /.pnp
-.sqlite
+database.sqlite
 .pnp.js
 .yarn/install-state.gz
 
