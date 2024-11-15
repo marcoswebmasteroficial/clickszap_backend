@@ -19,6 +19,7 @@ const loginUser = async (req: Request, res: Response): Promise<void> => {
       data: result
     })
   } catch (error) {
+    console.log(error)
     sendResponse(res, 500, {
       message: messages.errors.INTERNAL_SERVER_ERROR,
       error
@@ -68,6 +69,7 @@ const refreshAccessToken = async (
       data: result
     })
   } catch (error) {
+    console.log(error)
     sendResponse(res, 500, {
       message: messages.errors.INTERNAL_SERVER_ERROR,
       error
